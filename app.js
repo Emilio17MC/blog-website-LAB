@@ -39,7 +39,11 @@ app.get("/compose", (req, res) => {
 });
 
 app.post("/compose", (req, res) => {
-  console.log(req.body.composeTxt);
+  const post = {
+    title: req.body.composeTxt,
+    body: req.body.bodyTxt,
+  };
+
   res.render("compose");
 });
 
