@@ -52,10 +52,11 @@ app.post("/compose", (req, res) => {
 });
 
 app.get("/posts/:postName", (req, res) => {
+  const { postName } = req.params;
 
-  const {postName} = req.params
-
-  console.log(postName);
+  posts.forEach((post) => {
+    post.title === postName ? console.log("Match found") : false;
+  });
 });
 
 app.listen(3000, function () {
